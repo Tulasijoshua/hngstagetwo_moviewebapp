@@ -25,7 +25,7 @@ const Sidebar = () => {
         <div className='w-full py-[2rem] overflow-y-hidden '>
           <div className="mb-[1rem] flex justify-between items-center px-4 pt-4">
             <div className="flex justify-center items-center lg:gap-[1.5rem] xl:mb-[2rem] lg:mb-[1.5rem]">
-              <div className="mr-3 w-[30px] xl:w-[30px] h-[30px] xl:h-[30px] lg:w-[25px] lg:h-[25px]">
+              <div onClick={showNavbar} className="mr-3 w-[30px] xl:w-[30px] h-[30px] xl:h-[30px] lg:w-[25px] lg:h-[25px]">
                 <img className="w-full h-full" src={tv} />
               </div>
               <div className="text-xl xl:text-lg lg:text-base font-semibold">MovieBox</div>
@@ -36,7 +36,7 @@ const Sidebar = () => {
           </div>
           <div className="mx-auto flex flex-col justify-center text-gray-600 mb-[2rem] xl:mb-[2rem] lg:mb-[1.5rem]">
             <NavLink to='/'>
-              <div className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
+              <div onClick={showNavbar} className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
                 <div className='h-full hover:text-black xl:text-xl lg:text-lg'>
                   <GoHome />
                 </div>
@@ -44,19 +44,19 @@ const Sidebar = () => {
               </div>
             </NavLink>
 
-            <div className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
+            <div onClick={showNavbar} className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
               <div className='xl:text-xl lg:text-lg'>
                 <BiCameraMovie />
               </div>
               <div className="xl:text-lg lg:text-base capitalize font-semibold">movie</div>
             </div>
-            <div className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
+            <div onClick={showNavbar} className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
               <div className='xl:text-xl lg:text-lg'>
                 <MdOndemandVideo />
               </div>
               <div className="xl:text-lg lg:text-base capitalize font-semibold">TV series</div>
             </div>
-            <div className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
+            <div onClick={showNavbar} className="py-[1.5rem] xl:py-[1.5rem] lg:py-[1rem] px-[3rem] xl:px-[3rem] lg:px-[2rem] flex items-center justify-start gap-4 cursor-pointer hover:bg-red-200 hover:border-r-[0.3rem] border-red-900">
               <div className='xl:text-xl lg:text-lg'>
                 <BsCalendar3 />
               </div>
@@ -71,7 +71,7 @@ const Sidebar = () => {
             </div>
           </div>
           <NavLink to='/'>
-            <div className="mt-4 mb-3  flex items-center justify-center text-gray-600 font-semibold cursor-pointer">
+            <div onClick={showNavbar} className="mt-4 mb-3  flex items-center justify-center text-gray-600 font-semibold cursor-pointer">
               <div className="text-xl mr-3">
                 <IoLogOutOutline />
               </div>

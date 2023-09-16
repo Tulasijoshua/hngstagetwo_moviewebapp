@@ -3,7 +3,9 @@ import { AiFillStar } from 'react-icons/ai'
 import { BsChevronDown } from 'react-icons/bs'
 import { BiMenu } from 'react-icons/bi'
 import showTimes from '../../../../../assets/commons/showtimes.png'
+import mj1 from '../../../../../assets/jeans/mj-2.jpg'
 import mj2 from '../../../../../assets/jeans/mj-2.jpg'
+import mj3 from '../../../../../assets/jeans/mj-2.jpg'
 import options from '../../../../../assets/commons/options.png'
 import whiteOption from '../../../../../assets/commons/WhiteOptions.png'
 import movie from '../../../../../assets/jeans/mj-1.jpg'
@@ -15,9 +17,8 @@ const Details = ({ data }) => {
     // const {singleMovie} = useMovieContext
     const { title, poster_path, release_date, runtime, overview, genres } = data;
 
-    const firstThree = data.slice(0, 3);
+    // const firstThree = data.slice(0, 3);
 
-    console.log(data)
     return (
         <div className="w-full">
 
@@ -30,7 +31,7 @@ const Details = ({ data }) => {
                             <div data-testid='movie-title' className="xl:mr-4 sm:mr-3 mr-2 capitalize">top gun: {title}</div>
                             <ul className="xl:ml-6 sm:ml-3 ml-2 mt-2 flex justify-center items-center ">
                                 <li data-testid='movie-release-date' className="sm:list-disc sm:pr-5 mr-4">
-                                    {release_date.slice(0, 4)}
+                                    {release_date}
                                     
                                 </li>
                                 <li className="sm:list-disc sm:pr-5 mr-4 uppercase">pg-13</li>
@@ -121,7 +122,7 @@ const Details = ({ data }) => {
                                         <img className='w-full h-full' src={mj2} />
                                     </div>
                                     <div className='w-1/3 h-full'>
-                                        <img className='w-full h-full' src={mj2} />
+                                        <img className='w-full h-full' src={mj3} />
                                     </div>
                                 </div>
                                 <div className="w-full px-2 py-1 absolute bottom-0 left-0 flex justify-between bg-black opacity-[0.4]  overflow-hidden">
