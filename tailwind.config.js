@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        
+      },
       colors: {
         brownClr: "rgb(213,145,80)",
         blackClr: "#000",

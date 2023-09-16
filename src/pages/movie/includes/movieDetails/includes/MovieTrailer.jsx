@@ -25,12 +25,15 @@ const MovieTrailer = ({ data }) => {
         playerVars: {
             autoplay: 1, // Auto-play the video
         },
+        borderRadius: '2rem'
     };
 
     return (
-            <div className="w-full h-[450px] mb-[2rem] rounded-2xl">
+            <div className="w-full xl:h-[450px] lg:h-[450px] mb-[2rem] rounded-2xl">
 
-                <YouTube className=" object-cover rounded-2xl" videoId={videoId} opts={opts} />
+                <YouTube className="object-cover rounded-2xl" videoId={videoId} 
+                opts={opts} 
+                />
             </div>
     )
 }

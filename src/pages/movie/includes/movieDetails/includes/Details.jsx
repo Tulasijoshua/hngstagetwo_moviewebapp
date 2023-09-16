@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BsChevronDown } from 'react-icons/bs'
+import { BiMenu } from 'react-icons/bi'
 import showTimes from '../../../../../assets/commons/showtimes.png'
 import mj2 from '../../../../../assets/jeans/mj-2.jpg'
 import options from '../../../../../assets/commons/options.png'
@@ -12,96 +13,111 @@ import MovieTrailer from './MovieTrailer'
 
 const Details = ({ data }) => {
     // const {singleMovie} = useMovieContext
-    const { title, poster_path, release_date, runtime, overview, genres} = data;
+    const { title, poster_path, release_date, runtime, overview, genres } = data;
 
     // const fullTime = runtime.toString();
     // const hrTime = fullTime.slice(0, 1);
     // const minTime = fullTime.slice(1, 3);
     // const popular = popularity.toString();
     // const getPopular = popular.slice(0, 3);
+    // let dateRelease = release_date.slice(0, 4);
 
     console.log(data)
     return (
-        <div>
+        <div className="w-full">
+
             <MovieTrailer data={data} />
-            <div>
-                <div className="w-full flex justify-between items-center">
-                    <div className="">
-                        <div className="mr-2 flex items-center text-xl text-gray-700 font-medium">
-                            <div className="mr-4 capitalize">top gun: {title}</div>
-                            <ul className="ml-6 flex justify-center items-center ">
-                                <li className="list-disc pr-5 mr-4">{release_date}</li>
-                                <li className="list-disc pr-5 mr-4 uppercase">pg-13</li>
-                                <li className="list-disc pr-2">
-                                    {/* {hrTime}h {minTime}m */}
+            <div className="w-[95%] mx-auto">
+                <div className="w-full flex lg:flex-row flex-col lg:justify-between sm:items-start lg:items-center md:gap-1 gap-2">
+
+                    <div className="xl:mr-2 lg:mr-[10px] flex xs:flex-row flex-col xs:justify-center xs:items-center items-start xl:text-xl lg:text-sm md:text-xs sm:text-sm xs:text-sm text-base text-gray-700 font-medium">
+                        <div className="flex sm:flex-row sm:justify-center justify-start sm:gap-0 gap-5 sm:items-center items-start">
+                            <div data-testid='movie-title' className="xl:mr-4 sm:mr-3 mr-2 capitalize">top gun: {title}</div>
+                            <ul className="xl:ml-6 sm:ml-3 ml-2 mt-2 flex justify-center items-center ">
+                                <li data-testid='movie-release-date' className="sm:list-disc sm:pr-5 mr-4">
+                                    {release_date.slice(0, 4)}
+                                    
+                                </li>
+                                <li className="sm:list-disc sm:pr-5 mr-4 uppercase">pg-13</li>
+                                <li data-testid='movie-runtime' className="sm:list-disc pr-2">
+                                    {runtime} mins
+    
                                 </li>
                             </ul>
-                            <div className="flex items-center justify-center text-[15px]  text-red-900">
-                                <button className="py-[2px] px-[8px] rounded-xl text-bold border mr-2">Action</button>
-                                <button className="py-[2px] px-[8px] rounded-xl  border">Drama</button>
+                            <div className="md:flex hidden items-center justify-center xl:text-[15px] sm:text-[12px]  text-red-900">
+                                <button className="xl:py-[2px] lg:py-[1px] xl:px-[8px] sm:px-[6px] rounded-xl text-bold border mr-2">Action</button>
+                                <button className="xl:py-[2px] lg:py-[1px] xl:px-[8px] sm:px-[6px] rounded-xl  border">Drama</button>
                             </div>
+
                         </div>
                     </div>
                     <div className="flex items-center">
                         <div className="mr-2">
-                            <AiFillStar className="text-yellow-400 text-2xl" />
+                            <AiFillStar className="text-yellow-400 xl:text-2xl text-xl" />
                         </div>
-                        <div className="mr-2 text-xl text-gray-300 font-semibold">8.5</div>
-                        <div className="w-[2.5px] h-[13px] bg-gray-700 mr-2"></div>
-                        <div className="text-base">
+                        <div className="mr-2 xl:text-xl sm:text-lg text-sm text-gray-300 font-semibold">8.5</div>
+                        <div className="lg:w-[2.5px] sm:w-[2px] w-[2px] lg:h-[13px] sm:h-[10px] h-[12px] bg-gray-700 mr-2"></div>
+                        <div className="xl:text-base text-sm">
                             <p>350k</p>
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center">
-                    <div className='w-[65%] my-[1rem]'>
+                <div className="flex sm:flex-row flex-col items-start sm:mt-[1.5rem] mt-[0.5rem]">
+                    <div className='sm:w-[65%] w-[95%] my-[1rem] mr-4'>
                         <div className="mb-[1rem]">
-                            <p>
+                            <p data-testid='movie-overview' className='xl:text-lg sm:text-sm xs:text-sm text-xs'>
                                 {overview}
                             </p>
                         </div>
                         <div className='mb-4'>
-                            <div className="py-[1rem] flex justify-start items-center font-semibold text-base border-t border-gray-100">
+                            <div className="xl:py-[1rem] sm:py-[0.5rem] py-[0.5rem] flex xs:flex-row flex-col justify-start items-center font-semibold xl:text-base sm:text-sm text-sm border-t border-gray-100">
                                 <div className="text-gray-600 mr-2">Director :  </div><div className="text-red-700"> Joseph Kosinski</div>
                             </div>
-                            <div className="py-[1rem] flex justify-start items-center font-semibold text-base border-t border-gray-100">
+                            <div className="xl:py-[1rem] sm:py-[0.5rem] py-[0.5rem] flex xs:flex-row flex-col justify-start items-center font-semibold xl:text-base md:text-sm sm:text-xs text-sm  border-t border-gray-100">
                                 <div className="text-gray-600 mr-2">Writers :  </div><div className="text-red-700"> Jim Cash, Jack Epps Jr,  Peter Craig</div>
                             </div>
-                            <div className="py-[1rem] flex justify-start items-center font-semibold text-base border-y border-gray-100">
+                            <div className="xl:py-[1rem] sm:py-[0.5rem] py-[0.5rem] flex xs:flex-row flex-col justify-start items-center font-semibold xl:text-base md:text-sm sm:text-xs text-sm  border-y border-gray-100">
                                 <div className="text-gray-600 mr-2">Stars :  </div><div className="text-red-700"> Tom Cruise, Jennifer Connelly, Miles Teller</div>
                             </div>
                         </div>
-                        <div className="w-full flex justify-between items-center border-[3px] border-gray-200 rounded-lg">
-                            <div className="flex justify-center items-center text-white">
+                        {/* <div className="w-full flex  justify-start items-center rounded-lg"> */}
+                        <div className="w-full  flex justify-start xs:flex-row flex-col items-center text-white">
+                            <div className='w-fit mt-1'>
                                 <Button
                                     text="Top rated movie #65"
                                     backgroundColor="#BE123C"
+                                    width='100%'
                                 />
-                                <div className="font-medium text-gray-600 pl-4 ">Awards 9 nominations</div>
+
                             </div>
-                            <div className="mr-4 text-gray-500">
-                                <BsChevronDown />
+                            <div className="flex-1 xs:mt-1 mt-[1rem] flex justify-between items-center xs:py-[5px] py-[8px] px-2 xs:border-y-[3px] xs:border-r-[3px] border-[3px] border-gray-200 xs:rounded-r-lg rounded-lg">
+                                <div className="xl:text-base lg:text-sm md:text-xs sm:text-xs xs:text-[8px] text-[8px] font-medium text-gray-600 pl-4 mr-[2rem] ">Awards 9 nominations</div>
+                                <div className="mr-4 text-gray-500">
+                                    <BsChevronDown />
+                                </div>
+
                             </div>
                         </div>
+                        {/* </div> */}
                     </div>
-                    <div className="flex-1">
-                        <div className="w-[360px] mx-auto">
+                    <div className="flex-1 ">
+                        <div className="w-full my-[1rem]">
                             <div className='w-full mb-[1rem] text-base text-white font-medium text-uppercase'>
                                 <Button
                                     text="See Showtimes"
-                                    image={showTimes} 
-                                    backgroundColor="#BE123C" 
+                                    image={showTimes}
+                                    backgroundColor="#BE123C"
                                     width="100%"
                                 />
                             </div>
                             <div className='w-full text-sm mb-[1.5rem]'>
                                 <Button
                                     text="More watch options"
-                                    image={options} 
-                                    backgroundColor="#FEF2F2" 
+                                    image={options}
+                                    backgroundColor="#FEF2F2"
                                     width="100%"
                                     border="1px solid #BE123C"
-                                 />
+                                />
                             </div>
                             <div className="relative">
                                 <div className="w-full h-full flex rounded-lg overflow-hidden">
@@ -119,7 +135,7 @@ const Details = ({ data }) => {
                                     <div className="w-[20px] h-[20px]">
                                         <img className="w-full h-full object-cover" src={whiteOption} />
                                     </div>
-                                    <div className="text-sm text-white">The Best Movies and Shows in September</div>
+                                    <div className="xs:text-sm text-[10px] text-white">The Best Movies and Shows in September</div>
                                 </div>
                             </div>
                         </div>

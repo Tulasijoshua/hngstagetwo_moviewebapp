@@ -11,7 +11,7 @@ const Button = ({ text, icon, image, backgroundColor, width, border, textTransfo
   };
   return (
     <div>
-      <button className="flex items-center justify-center xl:text-base lg:text-sm sm:text-xs md:py-2 sm:py-[7px] px-6 rounded-md" style={buttonStyle} onClick={onClick} >
+      <button className="flex items-center justify-center xl:text-base lg:text-sm xs:text-xs text-[10px] md:py-2 sm:py-[7px] py-[5px] sm:px-6 px-4 rounded-md" style={buttonStyle} onClick={onClick} >
         {icon && <span className="button-icon mr-3">{icon}</span>}
         {image && <img src={image} alt="Button Image" className="button-image mr-3" />}
         {text}
