@@ -6,7 +6,6 @@ import mj1 from '../../../../../assets/jeans/mj-2.jpg'
 import mj2 from '../../../../../assets/jeans/mj-2.jpg'
 import mj3 from '../../../../../assets/jeans/mj-2.jpg'
 import options from '../../../../../assets/commons/options.png'
-import whiteOption from '../../../../../assets/commons/WhiteOptions.png'
 import Button from '../../../../../components/Button'
 import MovieTrailer from './MovieTrailer'
 
@@ -122,7 +121,7 @@ const Details = ({ data }) => {
                                 </div>
                                 <div className="w-full px-2 py-1 absolute bottom-0 left-0 flex justify-between bg-black opacity-[0.4]  overflow-hidden">
                                     <div className="w-[20px] h-[20px]">
-                                        <img className="w-full h-full object-cover" src={whiteOption} />
+                                        <img className="w-full h-full object-cover" src={options} />
                                     </div>
                                     <div className="xs:text-sm text-[10px] text-white">The Best Movies and Shows in September</div>
                                 </div>
