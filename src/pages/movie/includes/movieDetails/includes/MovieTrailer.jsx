@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import YouTube from 'react-youtube';
-import axios from 'axios';
 import { useMovieContext } from '../../../../../context/movieContext';
 import { useParams } from 'react-router-dom';
 
@@ -23,7 +22,7 @@ const MovieTrailer = ({ data }) => {
         height: '450px',
         width: '100%',
         playerVars: {
-            autoplay: 1, // Auto-play the video
+            autoplay: 1, 
         },
         borderRadius: '2rem'
     };

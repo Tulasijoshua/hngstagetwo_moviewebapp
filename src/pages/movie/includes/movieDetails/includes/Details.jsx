@@ -1,23 +1,18 @@
 import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BsChevronDown } from 'react-icons/bs'
-import { BiMenu } from 'react-icons/bi'
 import showTimes from '../../../../../assets/commons/showtimes.png'
 import mj1 from '../../../../../assets/jeans/mj-2.jpg'
 import mj2 from '../../../../../assets/jeans/mj-2.jpg'
 import mj3 from '../../../../../assets/jeans/mj-2.jpg'
 import options from '../../../../../assets/commons/options.png'
 import whiteOption from '../../../../../assets/commons/WhiteOptions.png'
-import movie from '../../../../../assets/jeans/mj-1.jpg'
 import Button from '../../../../../components/Button'
-import { useMovieContext } from '../../../../../context/movieContext'
 import MovieTrailer from './MovieTrailer'
 
 const Details = ({ data }) => {
-    // const {singleMovie} = useMovieContext
     const { title, poster_path, release_date, runtime, overview, genres } = data;
 
-    // const firstThree = data.slice(0, 3);
 
     return (
         <div className="w-full">
