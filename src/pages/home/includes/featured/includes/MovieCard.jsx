@@ -15,12 +15,12 @@ const MovieCard = ({data}) => {
 
     return (
         <NavLink to={`/movie/${id}`}>
-            <div className='xl:w-[250px] w-[260px] lg:w-[250px] md:w-[200px] mb-[1.5rem]'>
-                <div className="2xl:w-[260px] w-[260px] lg:h-[370px] md:h-[270px] xl:w-[280px] lg:w-[250px] md:w-[200px] relative mb-3">
+            <div className='xl:w-[250px] w-[260px] lg:w-[250px] md:w-[200px] sm:w-[260px] mb-[1.5rem]'>
+                <div className="2xl:w-[260px] w-[260px] lg:h-[370px] md:h-[270px] xl:w-[280px] lg:w-[250px] md:w-[200px] sm:w-[260px] sm:h-[340px] relative mb-3">
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} className="w-full h-full object-cover" />
                     <div className='absolute top-1 right-2 left-2'>
                         <div className="flex justify-between items-center mt-3 mb-2">
-                            <div className="font-sans lg:text-[12px] md:text-[8px] lg:ml-2 md:ml-[6px] text-black font-bold bg-white opacity-[0.7] rounded-xl py-[4px] px-[10px] uppercase">tv series</div>
+                            <div className="font-sans lg:text-[12px] md:text-[8px] sm:text-[10px] lg:ml-2 md:ml-[6px] text-black font-bold bg-white opacity-[0.7] rounded-xl py-[4px] px-[10px] uppercase">tv series</div>
                             <div className="relative mr-2 lg:w-[30px] md:w-[25px] lg:h-[30px] md:h-[25px] rounded-full bg-gray-300 opacity-[0.95] text-white">
                                 <AiTwotoneHeart className="lg:text-xl md:text-base absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
                             </div>

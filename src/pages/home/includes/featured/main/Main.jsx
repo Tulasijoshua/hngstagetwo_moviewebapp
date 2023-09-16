@@ -12,7 +12,7 @@ import watch from '../../../../../assets/commons/watch.png'
 const Main = () => {
     // const { filters: {text}, getSearchMovie } = useFilterContext()
     return (
-        <div className='w-full  relative text-white mb-[4rem]'>
+        <div className='w-full  relative text-white md:mb-[4rem] sm:mb-[3rem]'>
             <div className='w-full xl:h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px]'>
                 <img className='w-full h-full object-cover' src={mainImg} />
             </div>
