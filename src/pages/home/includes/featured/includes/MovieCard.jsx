@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiTwotoneHeart } from 'react-icons/ai'
 import imdb from '../../../../../assets/commons/imdb.png'
 import apple from '../../../../../assets/commons/pinapple.png'
 import { NavLink } from 'react-router-dom'
 // import mj1 from '../../../../../assets/jeans/mj-1.jpg'
 
-const MovieCard = ({data}) => {
-    const {id, title, poster_path, release_date, popularity, vote_average
+const MovieCard = ({ data }) => {
+    const { id, title, poster_path, release_date, popularity, vote_average } = data
 
-    } = data
     const popular = popularity.toString();
     const getPopular = popular.slice(0, 3);
-    // console.log(data);
+
+    const [favColor, setFavColor] = useState('white');
+
+    const handleFavIcon = () => {
+        const newColor = favColor === 'white' ? '#BE123C' : 'white';
+        setFavColor(newColor);
+    };
 
     return (
         <NavLink to={`/movie/${id}`}>
@@ -22,7 +27,10 @@ const MovieCard = ({data}) => {
                         <div className="flex justify-between items-center mt-3 mb-2">
                             <div className="font-sans lg:text-[12px] md:text-[8px] text-[10px] lg:ml-2 md:ml-[6px] text-black font-bold bg-white opacity-[0.7] rounded-xl sm:py-[4px] py-[2px] px-[10px] uppercase">tv series</div>
                             <div className="relative mr-2 lg:w-[30px] md:w-[25px] sm:w-[30px] w-[25px] lg:h-[30px] md:h-[25px] sm:h-[30px] h-[25px] rounded-full bg-gray-300 opacity-[0.95] text-white">
-                                <AiTwotoneHeart className="lg:text-xl sm:text-base absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+                                <AiTwotoneHeart
+                                    onClick={handleFavIcon}
+                                    style={{ color: favColor }}
+                                    className="lg:text-xl sm:text-base absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
                             </div>
 
                         </div>

@@ -15,12 +15,7 @@ const Details = ({ data }) => {
     // const {singleMovie} = useMovieContext
     const { title, poster_path, release_date, runtime, overview, genres } = data;
 
-    // const fullTime = runtime.toString();
-    // const hrTime = fullTime.slice(0, 1);
-    // const minTime = fullTime.slice(1, 3);
-    // const popular = popularity.toString();
-    // const getPopular = popular.slice(0, 3);
-    // let dateRelease = release_date.slice(0, 4);
+    const firstThree = data.slice(0, 3);
 
     console.log(data)
     return (
@@ -40,7 +35,7 @@ const Details = ({ data }) => {
                                 </li>
                                 <li className="sm:list-disc sm:pr-5 mr-4 uppercase">pg-13</li>
                                 <li data-testid='movie-runtime' className="sm:list-disc pr-2">
-                                    {runtime} mins
+                                    {runtime}<span>mins</span>
     
                                 </li>
                             </ul>
@@ -80,7 +75,6 @@ const Details = ({ data }) => {
                                 <div className="text-gray-600 mr-2">Stars :  </div><div className="text-red-700"> Tom Cruise, Jennifer Connelly, Miles Teller</div>
                             </div>
                         </div>
-                        {/* <div className="w-full flex  justify-start items-center rounded-lg"> */}
                         <div className="w-full  flex justify-start xs:flex-row flex-col items-center text-white">
                             <div className='w-fit mt-1'>
                                 <Button
@@ -98,7 +92,6 @@ const Details = ({ data }) => {
 
                             </div>
                         </div>
-                        {/* </div> */}
                     </div>
                     <div className="flex-1 ">
                         <div className="w-full my-[1rem]">
@@ -122,7 +115,7 @@ const Details = ({ data }) => {
                             <div className="relative">
                                 <div className="w-full h-full flex rounded-lg overflow-hidden">
                                     <div className='w-1/3 h-full mr-1'>
-                                        <img className='w-full h-full' src={mj2} />
+                                        <img className='w-full h-full' src={mj1} />
                                     </div>
                                     <div className='w-1/3 h-full mr-1'>
                                         <img className='w-full h-full' src={mj2} />
