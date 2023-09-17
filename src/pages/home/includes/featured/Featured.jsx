@@ -35,7 +35,7 @@ const Featured = () => {
                 </div>
             </div>
             <div className='w-full mb-[2rem] flex sm:flex-row flex-col xl:justify-between md:justify-around sm:justify-between justify-center  sm:items-start items-center xl:gap-[4rem] lg:gap-[2rem] sm:gap-[2rem] flex-wrap'>
-                {filters.map((curElem, index) => {
+                {filters?.slice(0, 10).map((curElem, index) => {
                     return <MovieCard key={index} data={curElem} />
                 })}
                 

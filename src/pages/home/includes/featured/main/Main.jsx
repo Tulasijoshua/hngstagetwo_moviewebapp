@@ -30,7 +30,6 @@ const Main = () => {
                         <form onSubmit={(e) => e.preventDefault()}>
                             <input className="w-full bg-transparent border-2 rounded xl:py-[4px] sm:py-[2px] px-2 xl:text-base lg:text-sm sm:text-xs text-white lg:font-semibold sm:font-normal outline-[none]"
                                 type="text" onChange={(e) => setSearch(e.target.value)}
-                                // name="text" value={text} onChange={getSearchMovie}
                                 placeholder="What do you want to watch?"
                             />
                         </form>
@@ -68,8 +67,7 @@ const Main = () => {
                     <div className='xs:w-[60%] w-[70%] mx-auto relative'>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <input className="w-full bg-transparent border-2 rounded py-[2px] px-4 xs:text-xs text-[10px] text-white font-normal outline-[none]"
-                                type="text" name="text" 
-                                // value={text} onChange={getSearchMovie}
+                                type="text" onChange={(e) => setSearch(e.target.value)}
                                 placeholder="What do you want to watch?"
                             />
                         </form>
