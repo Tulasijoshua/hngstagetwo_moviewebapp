@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import reducer from '../reducer/moviereducer'
 import axios from 'axios';
 import { MOVIES } from "../movies";
@@ -16,11 +16,14 @@ const initialState = {
     isSingleLoading: false,
     singleMovie: [],
     trailer: [],
+    isTrailerLoading: false,
+    isTrailerError: false,
 };
 
 
 const MovieContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [search, setSearch] = useState('');
 
     const getMovies = async (url) => {
         dispatch({ type: "SET_LOADING" });
@@ -66,7 +69,7 @@ const MovieContextProvider = ({ children }) => {
         getMovies(API);
     }, [])
 
-    return <MovieContext.Provider value={{ ...state, getSingleMovie, getMovieTrailer }}>
+    return <MovieContext.Provider value={{ ...state, getSingleMovie, getMovieTrailer, search, setSearch }}>
         {children}
     </MovieContext.Provider>
 }

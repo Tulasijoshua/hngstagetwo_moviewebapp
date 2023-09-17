@@ -3,6 +3,7 @@
 //         case "LOAD_SEARCH_PRODUCTS":
 //             return {
 //                 ...state,
+//                 movies: [...action.payload],
 //                 filter_movies: [...action.payload],
 //             };
 
@@ -21,14 +22,14 @@
 
 
 //         case "SEARCH_MOVIE":
-//             const { value } = action.payload;
+//             const { name, value } = action.payload;
 
 //             return {
 //                 ...state,
 //                 filters: {
 //                     ...state.filters,
 //                     [name]: value,
-//                 }
+//                 },
 //             }
 //     }
 // }

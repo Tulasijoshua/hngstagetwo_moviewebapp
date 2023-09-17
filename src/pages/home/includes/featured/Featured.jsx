@@ -5,7 +5,25 @@ import { useMovieContext } from '../../../../context/movieContext'
 
 
 const Featured = () => {
-    const { movies } = useMovieContext();
+    const { movies, search, isLoading, isError } = useMovieContext();
+    
+    
+    const filters = movies.filter((item) => {
+        return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search)
+    })
+
+    if (isLoading) {
+        return <div className='text-center text-4xl font-bold'> 
+            <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+         </div>
+    }
+
+    if (isError) {
+        console.log("error occured")
+        return <div className='text-center text-4xl font-bold'> 
+            404!! 
+            <div className='my-[3rem] text-2xl'>An error occured</div>  </div>
+    }
     // console.log(movies);
     return (
         <div className='lg:w-[85%] sm:w-[90%] w-[80%] mx-auto'>
@@ -17,7 +35,7 @@ const Featured = () => {
                 </div>
             </div>
             <div className='w-full mb-[2rem] flex sm:flex-row flex-col xl:justify-between md:justify-around sm:justify-between justify-center  sm:items-start items-center xl:gap-[4rem] lg:gap-[2rem] sm:gap-[2rem] flex-wrap'>
-                {movies.map((curElem, index) => {
+                {filters.map((curElem, index) => {
                     return <MovieCard key={index} data={curElem} />
                 })}
                 

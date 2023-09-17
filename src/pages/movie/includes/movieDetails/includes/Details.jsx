@@ -6,6 +6,7 @@ import mj1 from '../../../../../assets/jeans/mj-2.jpg'
 import mj2 from '../../../../../assets/jeans/mj-2.jpg'
 import mj3 from '../../../../../assets/jeans/mj-2.jpg'
 import options from '../../../../../assets/commons/options.png'
+import optionWhite from '../../../../../assets/commons/whiteOptions.png'
 import Button from '../../../../../components/Button'
 import MovieTrailer from './MovieTrailer'
 
@@ -21,9 +22,9 @@ const Details = ({ data }) => {
                 <div className="w-full flex lg:flex-row flex-col lg:justify-between sm:items-start lg:items-center md:gap-1 gap-2">
 
                     <div className="xl:mr-2 lg:mr-[10px] flex xs:flex-row flex-col xs:justify-center xs:items-center items-start xl:text-xl lg:text-sm md:text-xs sm:text-sm xs:text-sm text-base text-gray-700 font-medium">
-                        <div className="flex sm:flex-row sm:justify-center justify-start sm:gap-0 gap-5 sm:items-center items-start">
-                            <div data-testid='movie-title' className="xl:mr-4 sm:mr-3 mr-2 capitalize">top gun: {title}</div>
-                            <ul className="xl:ml-6 sm:ml-3 ml-2 mt-2 flex justify-center items-center ">
+                        <div className="flex sm:flex-row flex-col sm:justify-center items-start sm:gap-0  sm:items-center ">
+                            <div data-testid='movie-title' className="xl:mr-4 sm:mr-3 capitalize">{title}</div>
+                            <ul className="xl:ml-6 sm:ml-3  mt-2 flex justify-center items-center ">
                                 <li data-testid='movie-release-date' className="sm:list-disc sm:pr-5 mr-4">
                                     {release_date}
                                     
@@ -121,7 +122,7 @@ const Details = ({ data }) => {
                                 </div>
                                 <div className="w-full px-2 py-1 absolute bottom-0 left-0 flex justify-between bg-black opacity-[0.4]  overflow-hidden">
                                     <div className="w-[20px] h-[20px]">
-                                        <img className="w-full h-full object-cover" src={options} />
+                                        <img className="w-full h-full object-cover" src={optionWhite} />
                                     </div>
                                     <div className="xs:text-sm text-[10px] text-white">The Best Movies and Shows in September</div>
                                 </div>

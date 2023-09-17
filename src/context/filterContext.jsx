@@ -17,14 +17,14 @@
 
 //     const [state, dispatch] = useReducer(reducer, initialState);
 
-//      // update filter values
-//     //  const getSearchMovie = (event) => {
-//     //     let name = event.target.name;
-//     //     let value = event.target.value;
-//     //     console.log(name)
+//     //  update filter values
+//      const getSearchMovie = (e) => {
+//         let name = e.target.name;
+//         let value = e.target.value;
+//         console.log(name)
 
-//     //     dispatch({type: "SEARCH_MOVIE", payload: {value}})
-//     // };
+//         dispatch({type: "SEARCH_MOVIE", payload: {name, value}})
+//     };
 
 //     useEffect(() => {
 //         dispatch({type: "FILTER_MOVIES"})
@@ -35,7 +35,7 @@
 //     }, [movies])
 
 //     return <FilterContext.Provider 
-//     // value={{...state, getSearchMovie, }}
+//     value={{...state, getSearchMovie, }}
 //     >
 //         {children}
 //     </FilterContext.Provider>

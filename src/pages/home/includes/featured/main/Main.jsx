@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { BiSearch } from 'react-icons/bi';
 import mainImg from '../../../items/Poster.jpg'
@@ -7,9 +7,11 @@ import imdb from '../../../../../assets/commons/imdb.png'
 import apple from '../../../../../assets/commons/pinapple.png'
 import Button from '../../../../../components/Button'
 import watch from '../../../../../assets/commons/watch.png'
+import { useMovieContext } from '../../../../../context/movieContext';
 // import { useFilterContext } from '../../../../../context/filterContext';
 
 const Main = () => {
+    const {search, setSearch} = useMovieContext();
     // const { filters: {text}, getSearchMovie } = useFilterContext()
     return (
         <div className='w-full  relative text-white md:mb-[4rem] mb-[3rem] '>
@@ -27,8 +29,8 @@ const Main = () => {
                     <div className='xl:w-[500px] lg:w-[350px] md:w-[300px] sm:w-[250px] relative'>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <input className="w-full bg-transparent border-2 rounded xl:py-[4px] sm:py-[2px] px-2 xl:text-base lg:text-sm sm:text-xs text-white lg:font-semibold sm:font-normal outline-[none]"
-                                type="text"
-                                // name='text' value={text} onChange={getSearchMovie}
+                                type="text" onChange={(e) => setSearch(e.target.value)}
+                                // name="text" value={text} onChange={getSearchMovie}
                                 placeholder="What do you want to watch?"
                             />
                         </form>
@@ -66,8 +68,8 @@ const Main = () => {
                     <div className='xs:w-[60%] w-[70%] mx-auto relative'>
                         <form onSubmit={(e) => e.preventDefault()}>
                             <input className="w-full bg-transparent border-2 rounded py-[2px] px-4 xs:text-xs text-[10px] text-white font-normal outline-[none]"
-                                type="text"
-                                // name='text' value={text} onChange={getSearchMovie}
+                                type="text" name="text" 
+                                // value={text} onChange={getSearchMovie}
                                 placeholder="What do you want to watch?"
                             />
                         </form>

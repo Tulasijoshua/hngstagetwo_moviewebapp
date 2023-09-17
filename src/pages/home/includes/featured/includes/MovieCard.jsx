@@ -3,9 +3,11 @@ import { AiTwotoneHeart } from 'react-icons/ai'
 import imdb from '../../../../../assets/commons/imdb.png'
 import apple from '../../../../../assets/commons/pinapple.png'
 import { NavLink } from 'react-router-dom'
+import { useMovieContext } from '../../../../../context/movieContext'
 // import mj1 from '../../../../../assets/jeans/mj-1.jpg'
 
 const MovieCard = ({ data }) => {
+    const {isLoading} = useMovieContext();
     const { id, title, poster_path, release_date, popularity, vote_average } = data
 
     const popular = popularity.toString();
@@ -18,9 +20,11 @@ const MovieCard = ({ data }) => {
         setFavColor(newColor);
     };
 
+    
+
     return (
         <NavLink to={`/movie/${id}`}>
-            <div data-testid='movie-card' className='xl:w-[250px] xs:w-[270px] w-[200px] lg:w-[250px] md:w-[200px] sm:w-[260px] md:mb-[1.5rem] sm:mb-2 mb-[3rem]'>
+            <div data-testid='movie-card' className='xl:w-[250px] xs:w-[270px] w-[230px] lg:w-[250px] md:w-[200px] sm:w-[260px] md:mb-[1.5rem] sm:mb-2 mb-[3rem]'>
                 <div className="2xl:w-[260px] w-full xl:w-[280px] lg:w-[250px] md:w-[200px] sm:w-[260px] lg:h-[370px] md:h-[270px] sm:h-[340px] xs:h-[360px] h-[320px] relative mb-3">
                     <img data-testid='movie-poster' src={`https://image.tmdb.org/t/p/w500${poster_path}`} className="w-full h-full object-cover" />
                     <div className='absolute top-1 right-2 left-2'>

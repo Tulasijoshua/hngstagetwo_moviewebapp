@@ -53,15 +53,15 @@ const MovieReducer = (state, action) => {
 
             return {
                 ...state,
-                isSingleLoading: false,
+                isTrailerLoading: false,
                 trailer: action.payload,
             };
 
         case "SET_TRAILER_ERROR":
             return {
                 ...state,
-                isSingleLoading: false,
-                isError: true,
+                isTrailerLoading: false,
+                isTrailerError: true,
             };
 
         default:
