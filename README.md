@@ -35,4 +35,4 @@ Tools & Frameworks Used:
 Build: ReactJS
 CSS: TailwindCSS
 API: TMDB
-Hosting: Githu
+Hosting: Netlify
