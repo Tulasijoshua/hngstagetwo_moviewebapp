@@ -17,8 +17,8 @@ const Sidebar = () => {
         navRef.current.classList.toggle("responsive_nav")
     }
   return (
-    <div className='relative xl:w-[240px] lg:w-[200px] max-h-full'>
-      <div onClick={showNavbar} className="w-fit nav-btn my-4 mx-[5px] text-3xl">
+    <div className='relative xl:w-[240px] lg:w-[200px] max-h-full z-10'>
+      <div onClick={showNavbar} className="w-fit nav-btn bg-red-200 h-full rounded-md my-4 mx-[4px] text-3xl">
         <BiMenu />
       </div>
       <div ref={navRef} className='sideBar absolute top-0 left-0 bg-white xl:w-[240px] w-[270px] lg:w-[200px] max-h-full border rounded-r-[3rem] overflow-y-auto '>
